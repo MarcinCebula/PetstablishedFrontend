@@ -2,7 +2,7 @@
 angular.module('petstablished')
   .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
     // $locationProvider.html5Mode(true).hashPrefix('!');
-    $urlRouterProvider.otherwise('/integrate');
+    $urlRouterProvider.otherwise('/integrate/form');
 
     $stateProvider
     .state('integrate', {
@@ -13,10 +13,16 @@ angular.module('petstablished')
         'body': { templateUrl: 'partials/integration.html' }
       }
     })
-    .state('integrate.request', {
-      url: '/request',
+    .state('integrate.form', {
+      url: '/form',
       views: {
         'navigation.steps': { templateUrl: 'partials/integration/integration-form.html' }
+      }
+    })
+    .state('integrate.preview', {
+      url: '/preview',
+      views: {
+        'navigation.steps': { templateUrl: 'partials/integration/preview.html' }
       }
     })
     .state('shelters', {
