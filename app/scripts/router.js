@@ -7,9 +7,16 @@ angular.module('petstablished')
     $stateProvider
     .state('integrate', {
       url: '/integrate',
+      abstract: true,
       views: {
         'navigation': { templateUrl: 'partials/navigation.html' },
         'body': { templateUrl: 'partials/integration.html' }
+      }
+    })
+    .state('integrate.request', {
+      url: '/request',
+      views: {
+        'navigation.steps': { templateUrl: 'partials/integration/integration-form.html' }
       }
     })
     .state('shelters', {

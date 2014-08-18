@@ -1,0 +1,26 @@
+<form role="novalidate form form-horizontal row">
+  <div class="well col-sm-offset-3 col-sm-6 .col-xs-offsets-2 .col-xs-10">
+    <div class="modal"></div>
+    <div class="form-group">
+      <label>Organization ID</label>
+      <input ng-model="form.organizationId"
+             ng-disabled="processing"
+             class="form-control input-lg text-center"
+             placeholder="NY803" type="text" name="organization_id"></input>
+    </div>
+    <!-- has-error -->
+    <div class="form-group">
+      <label>Fetch Count</label>
+      <input ng-model="form.fetchCount"
+             ng-disabled="processing"
+             class="form-control input-lg text-center"
+             placeholder="25" type="number" name="fetch_count" min="1" max="500"></input>
+    </div>
+    <div class="form-group integration-submit">
+
+      <button ng-click="submit()"
+              ng-class="{true: 'disabled'}[processing]"
+              class="btn btn-default btn-lg col-xs-offset-1 col-xs-10">Sign in</button>
+    </div>
+  </div>
+</form>
