@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('petstablished')
-  .controller('PetsCtrl', ['$scope', '$http', '$state', '$stateParams', function ($scope, $http, $state, $params) {
+  .controller('PetsCtrl', ['$scope', '$http', '$state', '$stateParams', 'env', function ($scope, $http, $state, $params, env) {
     $scope.pagination = {
       page: 1
     }
@@ -25,7 +25,7 @@ angular.module('petstablished')
         active: true
       }]
     }
-    $http.get('http://petstablishedserver.9wavelabs.com/api/shelter/' + $params.shelterUrlId +'/pets', {
+    $http.get(env.api + '/shelter/' + $params.shelterUrlId +'/pets', {
       params: {
         page: $scope.pagination.page
       }

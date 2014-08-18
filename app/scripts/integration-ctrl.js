@@ -1,8 +1,11 @@
 'use strict';
 
 angular.module('petstablished')
-  .controller('IntegrationCtrl', ['$scope', '$http', '$state', function ($scope, $http, $state) {
+  .controller('IntegrationCtrl', ['$scope', '$http', '$state', 'env', function ($scope, $http, $state, env) {
     $scope.form = {};
+    $scope.status = {
+      button: 'Process'
+    }
     $scope.processing = false;
     $scope.response = {};
     $scope.resetForm = function() {
@@ -11,7 +14,8 @@ angular.module('petstablished')
     };
     $scope.submit = function() {
       $scope.processing = true;
-      $http.post('http://petstablishedserver.9wavelabs.com/api/shelter/add_pets_to_organization', {
+      $scope.status.button = 'Processing...';
+      $http.post(env.api + '/shelter/add_pets_to_organization', {
         integration: {
           organization_id: $scope.form.organizationId,
           fetch_count: $scope.form.fetchCount
@@ -19,8 +23,10 @@ angular.module('petstablished')
       }).success(function(data, status, headers, config) {
         $scope.response = data.shelter
         $state.go('integrate.preview');
+        $scope.status.button = 'Process'
       }).error(function(data, status, headers, config) {
         alert(data.error)
+        $scope.status.button = 'Process'
         $scope.processing = false;
       });
     }
