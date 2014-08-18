@@ -33,7 +33,7 @@ angular.module('petstablished')
       }
     })
     .state('pets', {
-      url: '/shelters/:petid/pets',
+      url: '/shelters/:shelterUrlId/pets',
       views: {
         'navigation': { templateUrl: 'partials/navigation.html' },
         'breadcrumbs': { templateUrl: 'partials/breadcrumbs.html' },
