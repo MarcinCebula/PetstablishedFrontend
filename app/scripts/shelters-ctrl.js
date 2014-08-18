@@ -18,7 +18,7 @@ angular.module('petstablished')
         active: true
       }]
     }
-    $http.get('http://localhost:3000/api/shelter/index', {
+    $http.get('http://petstablishedserver.9wavelabs.com/api/shelter/index', {
       params: {
         page: $scope.pagination.page
       }

@@ -11,7 +11,7 @@ angular.module('petstablished')
     };
     $scope.submit = function() {
       $scope.processing = true;
-      $http.post('http://localhost:3000/api/shelter/add_pets_to_organization', {
+      $http.post('http://petstablishedserver.9wavelabs.com/api/shelter/add_pets_to_organization', {
         integration: {
           organization_id: $scope.form.organizationId,
           fetch_count: $scope.form.fetchCount

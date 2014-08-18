@@ -25,7 +25,7 @@ angular.module('petstablished')
         active: true
       }]
     }
-    $http.get('http://localhost:3000/api/shelter/' + $params.shelterUrlId +'/pets', {
+    $http.get('http://petstablishedserver.9wavelabs.com/api/shelter/' + $params.shelterUrlId +'/pets', {
       params: {
         page: $scope.pagination.page
       }
