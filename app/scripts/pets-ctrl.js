@@ -14,7 +14,7 @@ angular.module('petstablished')
         params: {},
         active: false
       }, {
-        state: 'shelters',
+        state: 'shelters.index',
         name: $scope.shelter.name,
         params: { url_id: $scope.shelter.url_id },
         active: false

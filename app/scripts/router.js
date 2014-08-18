@@ -27,9 +27,17 @@ angular.module('petstablished')
     })
     .state('shelters', {
       url: '/shelters',
+      abstract: true,
       views: {
         'navigation': { templateUrl: 'partials/navigation.html' },
-        'body': { templateUrl: 'partials/shelters/index.html' }
+        'body': { templateUrl: 'partials/shelters.html' },
+      }
+    })
+    .state('shelters.index', {
+      url: '/index',
+      views: {
+        'breadcrumbs': { templateUrl: 'partials/breadcrumbs.html' },
+        'shelters.pages': { templateUrl: 'partials/shelters/index.html' }
       }
     })
     .state('pets', {
@@ -37,7 +45,10 @@ angular.module('petstablished')
       abstract: true,
       views: {
         'navigation': { templateUrl: 'partials/navigation.html' },
-        'body': { templateUrl: 'partials/pets.html' },
+        'body': {
+          controller: 'PetsCtrl',
+          templateUrl: 'partials/pets.html'
+        },
       }
     })
     .state('pets.index', {
@@ -51,7 +62,7 @@ angular.module('petstablished')
       url: '/:petId/view',
       views: {
         'breadcrumbs': { templateUrl: 'partials/breadcrumbs.html' },
-        'pets.pages': { templateUrl: 'partials/pets/index.html' }
+        'pets.pages': { templateUrl: 'partials/pets/show.html' }
       }
     })
 

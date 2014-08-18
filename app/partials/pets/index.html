@@ -1,9 +1,14 @@
+<br />
 <div class="container">
-  <div ng-repeat="pet in pets"
-     class="panel panel-default">
-    <div class="panel-body">
-      Basic panel example
+  <div ng-repeat="pet in pets">
+    <div class="col-sm-3 pet-wrapper">
+      <a ui-sref="pets.view({ petId: pet.id })">
+      <div class="img-circle image-index-wrapper col-sm-offset-1">
+        <img src="{{pet.media.images[0].medium.url}}" alt="" class="clip-pet-image"></img>
+      </div>
+      <div class="col-sm-12 ">
+       <h4 class="text-align-center">{{ pet.name }}</h4>
+      </div>
     </div>
   </div>
-
 </div>

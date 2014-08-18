@@ -9,25 +9,21 @@ angular.module('petstablished')
       $scope.breadcrumbs = [{
         state: 'integrate.form',
         name: 'Home',
-        params: {}
+        params: {},
+        active: false
       }, {
         state: 'shelters',
-        name: 'shelterid',
-        params: {}
-      }, {
-        state: 'pets.view',
-        name: 'pet-id',
-        params: {petId: 'test'}
+        name: 'Shelters',
+        params: {},
+        active: true
       }]
     }
-    $http.post('http://localhost:3000/api/shelter/index', {
-      shelter: {
-        page: $scope.pagination.page,
-        url_id: $params.shelterUrlId
+    $http.get('http://localhost:3000/api/shelter/index', {
+      params: {
+        page: $scope.pagination.page
       }
     }).success(function(data, status, headers, config) {
-      console.log(data);
-      $scope.response = data
+      $scope.shelters = data
       $scope.setupCrumbs();
     }).error(function(data, status, headers, config) {
       // alert(data.error)
