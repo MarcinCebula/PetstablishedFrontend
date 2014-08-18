@@ -34,10 +34,25 @@ angular.module('petstablished')
     })
     .state('pets', {
       url: '/shelters/:shelterUrlId/pets',
+      abstract: true,
       views: {
         'navigation': { templateUrl: 'partials/navigation.html' },
-        'breadcrumbs': { templateUrl: 'partials/breadcrumbs.html' },
-        'body': { templateUrl: 'partials/pets/index.html' }
+        'body': { templateUrl: 'partials/pets.html' },
       }
     })
+    .state('pets.index', {
+      url: '/index',
+      views: {
+        'breadcrumbs': { templateUrl: 'partials/breadcrumbs.html' },
+        'pets.pages': { templateUrl: 'partials/pets/index.html' }
+      }
+    })
+    .state('pets.view', {
+      url: '/:petId/view',
+      views: {
+        'breadcrumbs': { templateUrl: 'partials/breadcrumbs.html' },
+        'pets.pages': { templateUrl: 'partials/pets/index.html' }
+      }
+    })
+
   }]);

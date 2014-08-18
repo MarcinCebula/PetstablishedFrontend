@@ -1,7 +1,9 @@
 <div class="container">
   <ol class="breadcrumb">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Library</a></li>
-    <li class="active">Data</li>
+    <li ng-repeat="crumb in breadcrumbs">
+        <span ng-show="crumb.active==true"> {{crumb.name}}</span>
+        <a ng-show="crumb.active==false"
+           ui-sref="{{crumb.state}}({{ crumb.params }})"> {{crumb.name}}</a>
+    </li>
   </ol>
 </div>

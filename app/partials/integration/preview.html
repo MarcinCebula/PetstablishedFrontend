@@ -48,7 +48,7 @@
              ng-click="resetForm()"
              class="btn btn-default">Try Importing Again</a>
 
-          <a ui-sref="pets({ shelterUrlId: response.url_id })"
+          <a ui-sref="pets.index({ shelterUrlId: response.url_id })"
              class="btn btn-primary">Goto {{ response.name }}</a>
         </div>
       </div>
