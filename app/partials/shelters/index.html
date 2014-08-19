@@ -2,7 +2,7 @@
 <div class="container">
   <div ng-repeat="shelter in shelters">
     <div class="col-sm-10">
-      <a ui-sref="pets.index({ shelterUrlId: shelter.url_id })">
+      <a ui-sref="pets.index-wrapper.index({ shelterUrlId: shelter.url_id })">
         <h3>{{shelter.name}}</h3>
       </a>
       <div class="col-sm-8 col-xs-12">

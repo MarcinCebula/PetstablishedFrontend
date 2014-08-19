@@ -6,13 +6,13 @@
       <div class="row thumbnail">
         <div class="col-sm-6 image">
           <div class="img-rounded image-index-wrapper">
-            <a ui-sref="pets.view({ petId: shelter.id })">
+            <a ui-sref="pets.view-wrapper.view({ petId: pet.id })">
               <img src="{{pet.media.images[0].medium.url}}" alt="" class="clip-pet-image"></img>
             </a>
           </div>
         </div>
         <div class="col-sm-5 content">
-          <a ui-sref="pets.view({ petId: shelter.id })">
+          <a ui-sref="pets.view-wrapper.view({ petId: pet.id })">
              <h4>{{pet.name}}</h4>
           </a>
           <br />

@@ -46,24 +46,60 @@ angular.module('petstablished')
       views: {
         'navigation': { templateUrl: 'partials/navigation.html' },
         'body': {
-          controller: 'PetsCtrl',
           templateUrl: 'partials/pets.html'
         },
       }
     })
-    .state('pets.index', {
-      url: '/index',
-      views: {
-        'breadcrumbs': { templateUrl: 'partials/breadcrumbs.html' },
-        'pets.pages': { templateUrl: 'partials/pets/index.html' }
-      }
-    })
-    .state('pets.view', {
-      url: '/:petId/view',
-      views: {
+      .state('pets.index-wrapper', {
+        url: '',
+        abstract: true,
+        views: {
+          'body': {
+            controller: 'PetsCtrl',
+            templateUrl: 'partials/pets/pets-wrapper.html'
+          }
+        },
+      })
+      .state('pets.view-wrapper', {
+        url: '/:petId',
+        abstract: true,
+        views: {
+          'body': {
+            controller: 'PetCtrl',
+            templateUrl: 'partials/pets/pets-wrapper.html'
+          }
+        },
+      })
+      .state('pets.edit-wrapper', {
+        url: '/:petId',
+        abstract: true,
+        views: {
+          'body': {
+            controller: 'PetEditCtrl',
+            templateUrl: 'partials/pets/pets-wrapper.html'
+          }
+        },
+      })
+
+      .state('pets.index-wrapper.index', {
+        url: '/index',
+        views: {
+          'breadcrumbs': { templateUrl: 'partials/breadcrumbs.html' },
+          'pets.pages': { templateUrl: 'partials/pets/index.html' }
+        }
+      })
+      .state('pets.view-wrapper.view', {
+        url: '/view',
+        views: {
         'breadcrumbs': { templateUrl: 'partials/breadcrumbs.html' },
         'pets.pages': { templateUrl: 'partials/pets/show.html' }
       }
-    })
-
+      })
+      .state('pets.edit-wrapper.edit', {
+        url: '/edit',
+        views: {
+          'breadcrumbs': { templateUrl: 'partials/breadcrumbs.html' },
+          'pets.pages': { templateUrl: 'partials/pets/edit.html' }
+        }
+      })
   }]);
