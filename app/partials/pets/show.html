@@ -1,7 +1,13 @@
 <div class="container pet-view">
-  <h1>{{ pet.name}}</h1>
+  <div class="col-sm-12">
+    <a ui-sref="pets.edit-wrapper.edit({ petId: pet.id })"
+       class="btn btn-primary col-sm-2 pull-right btn-lg">Edit Page</a>
+  </div>
 
   <!-- <img ng-src="{{ media.images[0].large.url }}" alt=""></img> -->
+  <div class="col-sm-12">
+    <h1 class="col-sm-5">{{ pet.name}}</h1>
+  </div>
   <div class="col-sm-5">
     <img ng-repeat="image in pet.media.images"
          ng-src="{{ image.large.url }}" alt=""
@@ -17,8 +23,6 @@
       </tbody>
     </table>
   </div>
-
-
 </div>
 
 <!-- :options, :breeds, :shelter_pet_id, :status, , :contact, :description, :sex, :age, :size, :mix, :shelter_id, :last_update, :media,  :animal -->
