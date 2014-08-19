@@ -7,7 +7,11 @@
       <div class="col-sm-4 col-xs-12">
         <h4>Only importing Cats and Dogs</h4>
         <h5>Asked to import: {{ response.request_pets_count }} animals</h5>
-        <h5>Imported: {{ response.pet_count }} cats & dogs</h5>
+        <h5>Contains: {{ response.pet_count }} cats & dogs</h5>
+        <h5>Imported: {{ response.added_count }} cats & dogs</h5>
+        <h5>Updated: {{ response.updated_count }} cats & dogs</h5>
+
+
       <br />
       <br />
       </div>
@@ -48,7 +52,7 @@
              ng-click="resetForm()"
              class="btn btn-default">Try Importing Again</a>
 
-          <a ui-sref="pets.index({ shelterUrlId: response.url_id })"
+          <a ui-sref="pets.index-wrapper.index({ shelterUrlId: response.url_id })"
              class="btn btn-primary">Goto {{ response.name }}</a>
         </div>
       </div>
