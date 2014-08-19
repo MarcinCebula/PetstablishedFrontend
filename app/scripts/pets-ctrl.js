@@ -34,7 +34,9 @@ angular.module('petstablished')
       $scope.pagination.visible = (offset >= $scope.pagination.count) ? false : true;
     }
 
-
+    $scope.isMix = function(mix) {
+      return mix == 'yes' ? "Mix" : "";
+    };
     $scope.loadMore = function() {
       $scope.pagination.disable = true;
       $scope.pagination.page += 1;
