@@ -1,0 +1,57 @@
+<div class="col-sm-offset-1 col-sm-9 col-xs-offsets-2 col-xs-12">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{response.name}}</h3>
+    </div>
+    <div class="panel-body row">
+      <div class="col-sm-4 col-xs-12">
+        <h4>Only importing Cats and Dogs</h4>
+        <h5>Asked to import: {{ response.request_pets_count }} animals</h5>
+        <h5>Imported: {{ response.pet_count }} cats & dogs</h5>
+      <br />
+      <br />
+      </div>
+      <div class="col-sm-8 col-xs-12 scrollable">
+        <table class="table table-striped">
+          <tbody>
+            <tr>
+              <td>ID</td>
+              <td>{{ response.id }}</td>
+            </tr>
+            <tr>
+              <td>Name</td>
+              <td>{{ response.name }}</td>
+            </tr>
+            <tr>
+              <td>Street</td>
+              <td>{{ response.address1 }}</td>
+            </tr>
+            <tr>
+              <td>Location</td>
+              <td>{{ response.city }}, {{ response.state }} {{ response.zip }}</td>
+            </tr>
+            <tr>
+              <td>Phone</td>
+              <td>{{ response.phone }}</td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td>{{ response.email }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-xs-12">
+        <br />
+        <div class="pull-right">
+          <a ui-sref="integrate.form"
+             ng-click="resetForm()"
+             class="btn btn-default">Try Importing Again</a>
+
+          <a ui-sref="pets.index({ shelterUrlId: response.url_id })"
+             class="btn btn-primary">Goto {{ response.name }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

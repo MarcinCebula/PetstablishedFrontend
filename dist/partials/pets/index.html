@@ -1,0 +1,33 @@
+<br />
+<div class="container">
+  <div ng-repeat="pet in pets">
+
+    <div class="col-md-4 col-sm-6 col-xs-6 pets-wrapper">
+      <div class="row thumbnail">
+        <div class="col-sm-6 image">
+          <div class="img-rounded image-index-wrapper">
+            <a ui-sref="pets.view-wrapper.view({ petId: pet.id })">
+              <img src="{{pet.media.images[0].medium.url}}" alt="" class="clip-pet-image"></img>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-5 content">
+          <a ui-sref="pets.view-wrapper.view({ petId: pet.id })">
+             <h4>{{pet.name}}</h4>
+          </a>
+          <br />
+          <div>({{pet.sex}}) {{pet.age}} {{isMix(pet.mix)}}</div>
+          <div>{{pet.status.verbose}}</div>
+          <div>{{pet.contact.email}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div ng-show="pagination.visible==true"
+       class="col-xs-12 load-more-container">
+    <button ng-click="loadMore()"
+            type="button"
+            class="col-xs-12 col-sm-offset-4 col-sm-4 btn btn-default btn-lg">Get More
+    </button>
+  </div>
+</div>
