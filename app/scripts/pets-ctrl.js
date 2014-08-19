@@ -15,12 +15,12 @@ angular.module('petstablished')
         active: false
       }, {
         state: 'shelters.index',
-        name: $scope.shelter.name,
-        params: { url_id: $scope.shelter.url_id },
+        name:  'Shelters',
+        params: {},
         active: false
       }, {
         state: 'pets.index',
-        name: 'Pets',
+        name: $scope.shelter.name,
         params: {},
         active: true
       }]
