@@ -2,19 +2,21 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 
 @import '../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap'
 
+
+.pets-wrapper
+  .thumbnail
+    border: none
+    border-right: 1px solid #eee
+    .image
+      padding-left: 0px
+      border: 1px solid #fff
+    &:hover
+      border: 1px solid #eee
 .load-more-container
   margin-bottom: 50px
   border-top: 1px solid #eee
   padding-top: 30px
 
-.pet-wrapper
-  height: 250px
-  &:hover
-    .image-index-wrapper
-      -moz-box-shadow: 0px 0px 10px #5bc0de
-      -webkit-box-shadow: 0px 0px 10px #5bc0de
-      box-shadow: 0px 0px 10px #5bc0de
-      cursor: pointer
 .text-align-center
   text-align: center
 
@@ -87,10 +89,3 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
   background: #ccc
   color: #000
   padding: 0.2em 0
-
-
-.thumbnail
-  height: 200px
-
-  img.pull-right
-    width: 50px
