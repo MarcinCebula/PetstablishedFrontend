@@ -1,0 +1,34 @@
+<div class="registration-form-container" ng-controller="RegistrationFormCtrl">
+  <h1>Sample Register</h1>
+
+  <form role="form row novalidate">
+    <div class="form-group col-sm-12">
+      <label>Email address</label>
+      <input type="email"
+             class="form-control"
+             value="credentials.email"
+             ng-model="credentials.email"
+             placeholder="Enter email">
+    </div>
+    <div class="form-group col-sm-6">
+      <label>Password</label>
+      <input type="password"
+             value="credentials.password"
+             ng-model="credentials.password"
+             class="form-control"
+             placeholder="Password">
+    </div>
+    <div class="form-group col-sm-6">
+      <label>Re-enter Password</label>
+      <input type="password"
+             value="credentials.passwordConfirmation"
+             ng-model="credentials.passwordConfirmation"
+             class="form-control"
+             placeholder="Re-enter Password">
+    </div>
+
+    <button type="submit"
+            ng-click="registerUser()"
+            class="btn btn-default">Submit</button>
+  </form>
+</div>
